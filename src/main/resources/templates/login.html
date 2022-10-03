@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"	crossorigin="anonymous">
+
+<title>Login</title>
+</head>
+
+<body>
+	<div class="container col-lg-3 col-md-6 col-sm-8 col12">
+
+		<h1 class="mt-5">Login</h1>
+		<div th:if="${param.error}">Inválido nome do usuário ou senha</div>
+		<div th:if="${param.logout}">Você fez logout.</div>
+
+		<form th:action="@{/login}" method="post">
+	
+			<div class="form-group mt-3">
+				<label for="username">Usuário</label> <input class="form-control"
+					type="text" name="username" placeholder="usuário" />
+			</div>
+
+			<div class="form-group mt-3">
+				<label for="password">Senha</label> <input class="form-control"
+					type="password" name="password" placeholder="senha" />
+			</div>
+
+			<button class="btn btn-primary mt-3" type="submit">Login</button>
+		</form>
+
+	</div>
+</body>
+</html>

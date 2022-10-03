@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'">
+	
+<head>
+	<title>Pesquisa de empresas</title>
+	
+	<link rel="stylesheet" type="text/css" href="/css/vendors.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/algaworks.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/application.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/style.css"/>	
+	
+</head>
+
+<body>
+	<section layout:fragment="conteudo">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-10">
+						<h1>Pesquisa de empresas</h1>
+					</div>
+					
+					<div class="col-sm-2">
+						<div class="aw-page-header-controls">
+							<a class="btn  btn-default" th:href="@{/empresas/novo}">
+								<i class="glyphicon  glyphicon-plus-sign"></i> <span class="hidden-xs  hidden-sm">Nova empresa</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<form method="GET">
+				<div class="row">
+					<div class="form-group  col-sm-6">
+						<label class="control-label" for="Nome_Empresa">Nome</label>
+						<input type="text" class="form-control" id="Nome_Emnpresa" autofocus="autofocus"/>
+					</div>
+					
+					<div class="form-group  col-sm-6" >
+						<label class="control-label" for="Fantasia_Empresa">Fantasia</label>
+						<input type="text" class="form-control" id="Fantasia_Empresa"/>
+					</div>
+				
+					<div class="form-group  col-sm-6" >
+						<label class="control-label" for="CNPJ_Empresa">CNPJ</label>
+						<input type="text" class="form-control" id="CNPJ_Empresa"/>
+					</div>
+
+					<div class="form-group  col-sm-6" >
+						<label class="control-label" for="IE_Empresa">IE</label>
+						<input type="text" class="form-control" id="IE_Empresa"/>
+					</div>
+
+				</div>
+
+				<button type="submit" class="btn  btn-primary">Pesquisar</button>
+			</form>
+		</div>
+
+		<div class="table-responsive  bw-tabela-simples">
+			<table class="table  table-hover">
+				<thead>
+					<tr>
+						<th class="table-cervejas-col-sku">Nome</th>
+						<th class="table-cervejas-col-nome">Fantasia</th>
+						<th class="table-cervejas-col-estilo">CNPJ</th>
+						<th class="table-cervejas-col-origem">IE</th>
+						<th class="table-cervejas-col-valor">Cidade</th>
+						<th class="table-cervejas-col-acoes">UF</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="empresa : ${empresas}">
+						<td th:text="${empresa.Nome_Empresa}">EJA</td>
+						<td th:text="${empresa.Fantasia_Empresa}">Ademilar</td>
+						<td th:text="${empresa.CNPJ_Empresa}">999.999.999/9999-99</td>
+						<td th:text="${empresa.IE_Empresa}">9.999.999-9</td>
+						<td th:text="${empresa.Cidade_Empresa}">Ponta Grossa</td>
+						<td th:text="${empresa.UF_Empresa}">PR</td>						
+						<td class="text-center">
+							<a class="btn  btn-link  btn-xs" title="Editar"> 
+								<i class="glyphicon glyphicon-pencil"></i>
+							</a>
+							<a class="btn  btn-link  btn-xs" title="Excluir">
+								<i class="glyphicon glyphicon-remove"></i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="col-sm-12  text-center">
+				<nav>
+					<ul class="pagination  pagination-sm">
+						<li class="disabled">
+							<a href="#"><span>&laquo;</span></a>
+						</li>
+						<li class="active">
+							<a href="#">1</a>
+						</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li>
+							<a href="#">3</a>
+						</li>
+						<li>
+							<a href="#"><span>&raquo;</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>			
+			
+		</div>		
+</section>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/vendors.min.js"></script>
+<script src="/js/algaworks.min.js"></script>
+</body>
+</html>
+	
+	
