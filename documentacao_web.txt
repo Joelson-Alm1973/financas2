@@ -1,0 +1,13 @@
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.paging-and-sorting
+
+https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/form.html	
+https://www.baeldung.com/spring-security-authentication-with-a-database
+
+https://docs.spring.io/spring-security/reference/features/authentication/password-storage.html#authentication-password-storage
+https://www.baeldung.com/spring-security-5-default-password-encoder
+
+https://www.baeldung.com/spring-security-granted-authority-vs-role
+
+https://www.baeldung.com/spring-data-jpa-stored-procedures
+

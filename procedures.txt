@@ -1,0 +1,25 @@
+#Cria procedure
+
+DELIMITER $$
+CREATE PROCEDURE get_total_empresas(OUT total INT)
+BEGIN 
+     SELECT count(*) into total FROM Empresa;
+END $$
+DELIMITER ;
+
+
+#Mostra todas as procedures do banco
+SHOW PROCEDURE STATUS WHERE db = 'financas2';
+
+
+#Para chamar
+CALL get_total_empresas(@total);
+SELECT @total;
+ 
+
+#Apaga
+DROP PROCEDURE get_total_empresas;
+
+
+#Ver EmpresaRepository
+
